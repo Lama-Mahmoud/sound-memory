@@ -29,18 +29,16 @@ h1{
 }
 
 button{
-	border-color:black;
-	height:100px;
-	width:100px;
-	margin:10px;
+	 border: 4px solid black;
+	height:200px;
+	width:200px;
+	margin:15px;
 	border-radius:10px;
+	flex-basis:50%;
 }
 
 .grid{
-	
+	display: flex;
 }
 
-.item{
-	
-}
 
