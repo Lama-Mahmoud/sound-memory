@@ -1,30 +1,36 @@
 
 body{
-	
+	background-color:#011C37;
+	margin: auto;
 }
 
 h1{
 	font-family: 'VT323', monospace;
+	color:#FBF0C3;
 }
 
 #green{
-	
+	background-color:#027402;
 }
 
 #red{
-	
+	background-color:#FE0000;
 }
 
 #blue{
-	
+	background-color:#0100FE;
 }
 
 #yellow{
-	
+	background-color:#FDFE00;
 }
 
 button{
-	
+	border-color:black;
+	height:100px;
+	width:100px;
+	margin:10px;
+	border-radius:10px;
 }
 
 .grid{
