@@ -3,6 +3,8 @@ window.onload= function(){
 	let colorsArrangement=[];
 	var level=0;
 	
+	//tracing clicks
+	var position=0;
 	
 	// get elements
 	let green=document.getElementById("green");
@@ -12,6 +14,11 @@ window.onload= function(){
 	
 	// initiate the game
 	document.addEventListener('keypress',startGame);
+	
+	
+	function selected(color){
+	}
+	
 
 	function startGame(){
 		document.removeEventListener('keypress',startGame);
@@ -52,10 +59,10 @@ window.onload= function(){
 		
 	}
 	
-	green.addEventListener('click',selected('green'));
-	red.addEventListener('click',selected('red'));
-	blue.addEventListener('click',selected('blue'));
-	yellow.addEventListener('click',selected('yellow'));
+	green.addEventListener('click',selected(0));
+	red.addEventListener('click',selected(1));
+	yellow.addEventListener('click',selected(2));
+	blue.addEventListener('click',selected(3));
 	
 	
 	
