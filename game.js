@@ -23,7 +23,7 @@ window.onload= function(){
 		var rand= Math.floor(Math.random()*4);
 		colorsArrangement.push(rand);
 		console.log(rand);
-		
+		head.innerHTML= "Level"+level;
 		//play voice
 		play(rand);
 		
@@ -32,7 +32,7 @@ window.onload= function(){
 	
 	
 	function selected(color){
-		if(colorsArrangement[position]===color)
+		if(colorsArrangement[position]!=color)
 		
 		if(position===colorsArrangement.length-1)
 		{
