@@ -1,7 +1,13 @@
+
+// to whom it may concern read my functions from the last one to the first 
+
+
+
 window.onload= function(){
 	
 	let colorsArrangement=[];
 	var level=0;
+	var noOfColors=4;
 	
 	//tracing clicks
 	var position=0;
@@ -13,17 +19,51 @@ window.onload= function(){
 	let blue=document.getElementById("blue");
 	let head=document.getElementById("level");
 	
-	// initiate the game
+	// initiate the game for the first time
 	document.addEventListener('keypress',startGame);
 	
+	
+	function play(colorNumber)
+	{
+		
+		if(colorNumber===0)
+		{
+			var audio = new Audio('sounds/green.mp3');
+			audio.play();
+		}
+		else if(colorNumber)
+		{
+			var audio = new Audio('sounds/red.mp3');
+			audio.play();
+			
+		}
+		else if(colorNumber===2)
+		{
+			var audio = new Audio('sounds/yellow.mp3');
+			audio.play();
+		}
+		else if(colorNumber===3)
+		{
+			var audio = new Audio('sounds/blue.mp3');
+			audio.play();
+		}
+		else
+		{
+			var audio = new Audio('sounds/wrong.mp3');
+			audio.play();
+		}
+	}
 	
 	function nextLevel()
 	{
 		level++;
-		var rand= Math.floor(Math.random()*4);
+		var rand= Math.floor(Math.random()*noOfColors);
 		colorsArrangement.push(rand);
+		
 		console.log(rand);
+		
 		head.innerHTML= "Level"+level;
+		
 		//play voice
 		play(rand);
 		
@@ -33,7 +73,20 @@ window.onload= function(){
 	
 	function selected(color){
 		if(colorsArrangement[position]!=color)
-		
+		{
+			// stop the game and red background
+			document.body.style.backgroundColor="#FE0000";
+			
+			// returning old functions
+			window.setTimeout(function()
+			{
+				document.body.style.backgroundColor="#FE0000";
+			}, 300);
+			level=0;
+			position=0;
+			document.addEventListener('keypress',startGame);
+
+		}
 		if(position===colorsArrangement.length-1)
 		{
 			if(level===15)
@@ -53,36 +106,7 @@ window.onload= function(){
 		// for the sake of testing
 		console.log("event removed");
 		
-		
-		var rand= Math.floor(Math.random()*4);
-		
-		console.log(rand);
-		level++;
-		
-		colorsArrangement.push(rand);
-		
-		
-		if(rand===0)
-		{
-			var audio = new Audio('sounds/green.mp3');
-			audio.play();
-		}
-		if(rand===1)
-		{
-			var audio = new Audio('sounds/red.mp3');
-			audio.play();
-			
-		}
-		if(rand===2)
-		{
-			var audio = new Audio('sounds/yellow.mp3');
-			audio.play();
-		}
-		if(rand===3)
-		{
-			var audio = new Audio('sounds/blue.mp3');
-			audio.play();
-		}
+		nextLevel();
 		
 	}
 	
