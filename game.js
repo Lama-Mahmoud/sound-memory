@@ -11,12 +11,39 @@ window.onload= function(){
 	let red=document.getElementById("red");
 	let yellow=document.getElementById("yellow");
 	let blue=document.getElementById("blue");
+	let head=document.getElementById("level");
 	
 	// initiate the game
 	document.addEventListener('keypress',startGame);
 	
 	
+	function nextLevel()
+	{
+		level++;
+		var rand= Math.floor(Math.random()*4);
+		colorsArrangement.push(rand);
+		console.log(rand);
+		
+		//play voice
+		play(rand);
+		
+		
+	}
+	
+	
 	function selected(color){
+		if(colorsArrangement[position]===color)
+		
+		if(position===colorsArrangement.length-1)
+		{
+			if(level===15)
+				//you won level=0 again
+			else
+			{
+				position=0;
+				nextLevel();
+			}
+		}
 	}
 	
 
