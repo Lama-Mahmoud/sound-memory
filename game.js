@@ -11,7 +11,15 @@ window.onload= function(){
 	let blue=document.getElementById("blue");
 	
 	// initiate the game
-	document.onkeypress = function (){
+	document.addEventListener('keypress',startGame);
+
+	function startGame(){
+		document.removeEventListener('keypress',startGame);
+		
+		// for the sake of testing
+		console.log("event removed");
+		
+		
 		var rand= Math.floor(Math.random()*4);
 		
 		console.log(rand);
@@ -43,4 +51,15 @@ window.onload= function(){
 		}
 		
 	}
+	
+	green.addEventListener('click',selected('green'));
+	red.addEventListener('click',selected('red'));
+	blue.addEventListener('click',selected('blue'));
+	yellow.addEventListener('click',selected('yellow'));
+	
+	
+	
+	
+	
+	
 }
