@@ -83,17 +83,17 @@ window.onload= function(){
 		
 		console.log(color);
 		
-		button= document.getElementById(color);
-		button.style.borderColor="#011C37";
+		nextbutton= document.getElementById(color);
+		nextbutton.style.borderColor="#011C37";
 		head.innerHTML= "Level "+level;
 		
-		//play voice
-		startVoice();
 		window.setTimeout(function()
 			{
-				button.style.borderColor="black";
+				nextbutton.style.borderColor="black";
+				//play voice 
+				startVoice();
 				
-			}, 1000);
+			}, 500);
 			
 			
 		
@@ -107,28 +107,29 @@ window.onload= function(){
 		button=document.getElementById(currentColor);
 		color=currentColor;
 		startVoice();
+		backgroundColor=null;
 		
 		// recoloring button
 		if(!currentColor.localeCompare("blue"))
-			currentColor=blueCOLOR;
+			backgroundcolor=blueCOLOR;
 		
 		else if(!currentColor.localeCompare("red"))
-			currentColor=redCOLOR;
+			backgroundcolor=redCOLOR;
 		
 		else if(!currentColor.localeCompare("yellow"))
-			currentColor=yellowCOLOR;
+			backgroundcolor=yellowCOLOR;
 		
 		else if(!currentColor.localeCompare("green"))
-			currentColor=greenCOLOR;
+			backgroundcolor=greenCOLOR;
 		
 		button.style.backgroundColor="#808080";
 		button.style.boxShadow = "0 0 30px white";
 		window.setTimeout(function()
 			{
 				button.style.boxShadow = "";
-				button.style.backgroundColor=currentColor;
+				button.style.backgroundColor=backgroundcolor;
 				
-			}, 200);
+			}, 100);
 		
 		//cases disscussion
 		
