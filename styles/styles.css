@@ -4,6 +4,8 @@ body{
 	margin: auto;
 	width: 50%;
 	font-size:30px;
+	align-content: center;
+	
 	
 }
 
@@ -39,6 +41,7 @@ button{
 
 .grid{
 	display: flex;
+	align-content: center;
 }
 
 
